@@ -59,32 +59,32 @@ trait Calculator{
     
 }
 
-class Rettangolo{
+class Rectangle{
     
     use Calculator;
     
-    public $b; //Base
-    public $h; //Altezza
+    public $base; //Base
+    public $height; //Altezza
 
     public function __construct($base, $altezza)
     {
-        $this->b = $base;
-        $this->h = $altezza; 
+        $this->base = $base;
+        $this->height = $altezza; 
     }
     
-    public function Area(){
-        return $this->mul($this->b, $this->h);
+    public function area(){
+        return $this->mul($this->base, $this->height);
     }
     
-    public function Perimetro(){
-        return $this->sum(2*($this->b),2*($this->h));
+    public function perimeter(){
+        return $this->sum(2*($this->base),2*($this->height));
     }
     
-    public function Diagonale(){
+    public function diagonal(){
         return $this->sqr(
             $this->sum(
-                $this->mul($this->b,$this->b),
-                $this->mul($this->h,$this->h)
+                $this->mul($this->base,$this->base),
+                $this->mul($this->height,$this->height)
             ));
         }
     }
